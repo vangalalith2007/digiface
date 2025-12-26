@@ -9,8 +9,10 @@ from flask_socketio import SocketIO, emit
 import sys
 import os
 
-# Add parent directory to path to import existing modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add parent and shared directories to path to import existing modules
+root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(root_dir)
+sys.path.append(os.path.join(root_dir, 'shared'))
 
 from face_recognition_module import FaceRecognitionModule
 from storage_manager import StorageManager
