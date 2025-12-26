@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 Face Recognition</h1>
+            <div class="status-bar">
+                <span id="status" class="status">● Initializing...</span>
+                <span id="user-count" class="user-count">Users: 0</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- Camera Section -->
+            <div class="camera-section">
+                <div class="video-container">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="canvas" style="display:none;"></canvas>
+                    <div id="face-overlay"></div>
+                </div>
+
+                <div class="controls">
+                    <button id="start-camera" class="btn btn-primary">📷 Start Camera</button>
+                    <button id="capture" class="btn btn-success" disabled>✓ Capture</button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section">
+                <div id="detection-result" class="result-card" style="display:none;">
+                    <h3>Detection Result</h3>
+                    <div id="detection-info"></div>
+                </div>
+
+                <div id="recognition-result" class="result-card" style="display:none;">
+                    <h3>Recognition Result</h3>
+                    <div id="recognition-info"></div>
+                </div>
+
+                <!-- Data Collection Form -->
+                <div id="data-form" class="result-card" style="display:none;">
+                    <h3>Register New User</h3>
+                    <form id="user-form">
+                        <div id="form-fields"></div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="button" id="cancel-form" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by DeepFace & Flask | <span id="model-info"></span></p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/camera.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/face_detection.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/voice_input.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>

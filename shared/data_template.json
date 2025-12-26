@@ -1,0 +1,29 @@
+{
+  "fields": [
+    {
+      "name": "name",
+      "prompt": "What is your name?",
+      "type": "string"
+    },
+    {
+      "name": "age",
+      "prompt": "What is your age?",
+      "type": "integer"
+    },
+    {
+      "name": "birth_date",
+      "prompt": "What is your birth date?",
+      "type": "date"
+    },
+    {
+      "name": "city",
+      "prompt": "Which city are you from?",
+      "type": "string"
+    },
+    {
+      "name": "state",
+      "prompt": "Which state are you from?",
+      "type": "string"
+    }
+  ]
+}
